@@ -1,6 +1,4 @@
-#include <stdarg.h>
-#include <unistd.h>
-#include <stdlib.h>
+#include "ft_printf.h"
 
 int whatprint(char c, va_list args)
 {
@@ -13,9 +11,9 @@ int whatprint(char c, va_list args)
     else if (c == 'u')
         return ft_putunsignednbr(va_arg(args, unsigned int));
     else if (c == 'x')
-        return ft_puthexLower(va_arg(args, unsigned int));
+        return ft_puthex_lower(va_arg(args, unsigned int));
     else if (c == 'X')
-        return ft_puthexUpper(va_arg(args, unsigned int));
+        return ft_puthex_upper(va_arg(args, unsigned int));
     else if (c == 'p')
         return ft_putptr(va_arg(args, void *));
     else if (c == '%')
