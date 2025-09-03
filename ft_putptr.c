@@ -3,16 +3,15 @@
 int	ft_putptr(void *ptr)
 {
     int count;
-    unsigned long long addr;
+    unsigned long addr;
 
     count = 0;
-    addr = (unsigned long long)ptr;
+    addr = (unsigned long)ptr;
     if (addr == 0)
-        return ft_putstr("0x0");
+        return ft_putstr("(nil)");
     else
     {
-        ft_putstr("0x");
-        count += 2;
+        count += ft_putstr("0x");
         count += ft_puthexLower(addr);
     }
     return count;

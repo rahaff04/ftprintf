@@ -14,11 +14,15 @@ int	ft_putnbr(int n)
 		nb = -nb;
 	}
 	if (nb >= 0 && nb <= 9)
+	{
 		ft_putchar(nb + '0');
+		count++;
+	}
 	else if (nb >= 10)
 	{
 		count += ft_putnbr(nb / 10);
 		ft_putchar((nb % 10) + '0');
+		count++;
 	}
-    return (count + 1);
+    return (count);
 }
